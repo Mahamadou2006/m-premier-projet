@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./test.css">
+    <title>test</title>
+</head>
+<body class="container">
+<div class="container2">
+    <div class="container3">
+  <label for="fname">Nom:</label><br>
+  <input type="text" id="fname" name="fname" value=""><br>
+  <label for="lname">Prénom:</label><br>
+  <input type="text" id="lname" name="lname" value=""><br><br>
+    </div>
+    <div class="container3">
+        <p>Ton joueur préféré:</p>
+
+<form>
+  <input type="radio" id="html" name="joueur_prefere" value="Cristiano Ronaldo">
+  <label for="Cristiano Ronaldo">Cristiano Ronaldo</label><br>
+  <input type="radio" id="Messi" name="joueur_prefere" value="Messi">
+  <label for="Messi">Messi</label><br>
+  <input type="radio" id="Neymar" name="joueur_prefere" value="Neymar">
+  <label for="Neymar">Neymar</label>
+</form>
+<div>
+    <p>Ton équipe préféré:</p>
+
+<form>
+  <input type="checkbox" id="Real Madrid" name="équipe_prefere" value="Real Madrid">
+  <label for="Real Madrid"> Real Madrid</label><br>
+  <input type="checkbox" id="Barça" name="équipe_prefere" value="Barça">
+  <label for="Barça">Barça</label><br>
+  <input type="checkbox" id="Liverpool" name="équipe_prefere" value="Liverpool">
+  <label for="Liverpool">Liverpool</label>
+</form>
+<div>
+    <p>
+        ton genre de film prefere:
+    </p>
+    <form>
+        <input list="browsers" name="browser">
+        <datalist id="browsers">
+          <option value="Comedie">
+          <option value="Action">
+          <option value="Romance">
+          <option value="Fantastique">
+          <option value="Horreur">
+        </datalist>
+      </form>
+</div>
+
+<div>
+    <p>
+        ta couleur prefere:
+    </p>
+    <form>
+        <label for="cars"></label>
+        <select id="cars" name="cars">
+          <option value="Bleu">Bleu</option>
+          <option value="Vert">Vert</option>
+          <option value="Rouge">Rouge</option>
+          <option value="Jaune">Jaune</option>
+        </select>
+      </form>
+</div>
+<div>
+    <p>
+        entre dans tes fichier: 
+    </p>
+    <form>
+        <label for="myfile"></label>
+        <input type="file" id="myfile" name="myfile"><br><br>
+      </form>
+</div>
+<div>
+    <p>
+        Zone de commentaire:
+    </p>
+    <form>
+        <textarea name="message" rows="10" cols="40"></textarea>
+        <br><br>
+      </form>
+</div>
+<div>
+    <form>
+        <input type="image" src="./istockphoto-1359248264-612x612.jpg" alt="Submit" width="48" height="48" onclick="alert('Super!!')" value="Click Me!">
+      </form>
+</div>
+
+
+</div> 
+
+    </div>
+</div>
+    
+</body>
+</html>

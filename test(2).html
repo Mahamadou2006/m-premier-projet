@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    <style>
+        .form-container {
+            max-width: 600px; /* Limite la largeur du formulaire */
+            margin: 0 auto; /* Centre le conteneur */
+            padding: 20px;
+            text-align: center; /* Centre le texte */
+        }
+        .form-container input[type="text"],
+        .form-container input[type="file"],
+        .form-container select,
+        .form-container textarea {
+            width: 100%; /* Prend toute la largeur disponible */
+            max-width: 300px; /* Limite la largeur des champs */
+            margin: 10px auto; /* Centre les champs */
+            display: block; /* Assure que les champs sont sur une nouvelle ligne */
+        }
+        .form-container input[type="radio"],
+        .form-container input[type="checkbox"] {
+            margin: 5px 5px 5px 0; /* Espacement entre les boutons radio/checkbox */
+        }
+        .form-container label {
+            display: block; /* Met les labels sur une nouvelle ligne */
+            margin: 10px 0 5px 0; /* Espacement entre les labels et les champs */
+        }
+        .form-container p {
+            margin: 20px 0 10px 0; /* Espacement entre les sections */
+        }
+    </style>
+</head>
+<body style="font-family: Arial; background-color: #f4f4f4; margin: 0; padding: 0;">
+<div style="width: 1000px; max-width: 100%; margin: auto; padding: 20px; background-color: #fff; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+    <div class="form-container">
+        <div>
+            <label for="fname">Nom:</label>
+            <input type="text" id="fname" name="fname" value="">
+            <label for="lname">Prénom:</label>
+            <input type="text" id="lname" name="lname" value="">
+        </div>
+        <div>
+            <p>Ton joueur préféré:</p>
+            <input type="radio" id="Cristiano" name="joueur_prefere" value="Cristiano Ronaldo">
+            <label for="Cristiano">Cristiano Ronaldo</label><br>
+            <input type="radio" id="Messi" name="joueur_prefere" value="Messi">
+            <label for="Messi">Messi</label><br>
+            <input type="radio" id="Neymar" name="joueur_prefere" value="Neymar">
+            <label for="Neymar">Neymar</label>
+        </div>
+        <div>
+            <p>Ton équipe préférée:</p>
+            <input type="checkbox" id="Real Madrid" name="équipe_prefere" value="Real Madrid">
+            <label for="Real Madrid">Real Madrid</label><br>
+            <input type="checkbox" id="Barça" name="équipe_prefere" value="Barça">
+            <label for="Barça">Barça</label><br>
+            <input type="checkbox" id="Liverpool" name="équipe_prefere" value="Liverpool">
+            <label for="Liverpool">Liverpool</label>
+        </div>
+        <div>
+            <p>Ton genre de film préféré:</p>
+            <input list="browsers" name="browser">
+            <datalist id="browsers">
+                <option value="Comedie">
+                <option value="Action">
+                <option value="Romance">
+                <option value="Fantastique">
+                <option value="Horreur">
+            </datalist>
+        </div>
+        <div>
+            <p>Ta couleur préférée:</p>
+            <select id="cars" name="cars">
+                <option value="Bleu">Bleu</option>
+                <option value="Vert">Vert</option>
+                <option value="Rouge">Rouge</option>
+                <option value="Jaune">Jaune</option>
+            </select>
+        </div>
+        <div>
+            <p>Entre dans tes fichiers:</p>
+            <input type="file" id="myfile" name="myfile">
+        </div>
+        <div>
+            <p>Zone de commentaire:</p>
+            <textarea name="message" rows="10" cols="40"></textarea>
+        </div>
+        <div>
+            <input type="image" src="./istockphoto-1359248264-612x612.jpg" alt="Submit" width="48" height="48" onclick="alert('Super!!')" value="Click Me!">
+        </div>
+    </div>
+</div>
+</body>
+</html>

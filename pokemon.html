@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poké Ball Animation</title>
+    <style>
+        /* Styles de base */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to bottom, #1a1a1a, #000);
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Conteneur de la Poké Ball */
+        .pokeball-container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            cursor: pointer;
+        }
+
+        /* Poké Ball */
+        .pokeball {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, #ff1c1c 50%, #ffffff 50%);
+            border-radius: 50%;
+            border: 8px solid #000;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            overflow: hidden;
+            animation: shake 0.5s ease-in-out 1s forwards;
+        }
+
+        /* Bouton central de la Poké Ball */
+        .pokeball::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 40px;
+            height: 40px;
+            background: #fff;
+            border: 8px solid #000;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+        }
+
+        /* Ligne centrale de la Poké Ball */
+        .pokeball::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: #000;
+            transform: translateY(-50%);
+            z-index: 1;
+        }
+
+        /* Animation d'ouverture de la Poké Ball */
+        .pokeball.open .top {
+            transform: rotate(-45deg);
+        }
+
+        .pokeball.open .bottom {
+            transform: rotate(45deg);
+        }
+
+        /* Parties supérieure et inférieure de la Poké Ball */
+        .top, .bottom {
+            position: absolute;
+            width: 100%;
+            height: 50%;
+            background: inherit;
+            transition: transform 1s ease-in-out;
+            transform-origin: bottom;
+        }
+
+        .top {
+            top: 0;
+            border-radius: 100px 100px 0 0;
+        }
+
+        .bottom {
+            bottom: 0;
+            border-radius: 0 0 100px 100px;
+        }
+
+        /* Effet de lueur lors de l'ouverture */
+        .glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.8), transparent 70%);
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            animation: glow 1s ease-in-out 1.5s forwards;
+        }
+
+        /* Pokémon qui apparaît */
+        .pokemon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100px;
+            height: 100px;
+            background: url('https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png') no-repeat center center;
+            background-size: contain;
+            transform: translate(-50%, -50%) scale(0);
+            opacity: 0;
+            animation: appear 1s ease-in-out 2s forwards;
+        }
+
+        /* Fond animé avec des particules lumineuses */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent 70%);
+            animation: particles 2s infinite linear;
+        }
+
+        /* Animations */
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            50% { transform: translateX(10px); }
+            75% { transform: translateX(-5px); }
+        }
+
+        @keyframes glow {
+            0% { opacity: 0; }
+            50% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+
+        @keyframes appear {
+            0% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
+            50% { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
+            100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+        }
+
+        @keyframes particles {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="pokeball-container" onclick="openPokeball()">
+        <!-- Poké Ball -->
+        <div class="pokeball">
+            <div class="top"></div>
+            <div class="bottom"></div>
+            <div class="glow"></div>
+        </div>
+
+        <!-- Pokémon -->
+        <div class="pokemon"></div>
+
+        <!-- Particules lumineuses -->
+        <div class="particles"></div>
+    </div>
+
+    <!-- Son d'ouverture de la Poké Ball -->
+    <audio id="pokeball-sound" src="https://www.soundjay.com/button/sounds/button-3.mp3"></audio>
+
+    <script>
+        function openPokeball() {
+            const pokeball = document.querySelector('.pokeball');
+            const sound = document.getElementById('pokeball-sound');
+
+            // Ajoute la classe pour ouvrir la Poké Ball
+            pokeball.classList.add('open');
+
+            // Joue le son 

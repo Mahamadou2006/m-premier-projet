@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 1000px;
+            max-width: 100%;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group input[type="text"],
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .form-group input[type="radio"],
+        .form-group input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        .form-group input[type="file"] {
+            margin-top: 10px;
+        }
+        .form-group input[type="image"] {
+            cursor: pointer;
+        }
+        .form-group .inline {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="form-group">
+        <label for="fname">Nom:</label>
+        <input type="text" id="fname" name="fname" value="">
+    </div>
+    <div class="form-group">
+        <label for="lname">Prénom:</label>
+        <input type="text" id="lname" name="lname" value="">
+    </div>
+    <div class="form-group">
+        <p>Ton joueur préféré:</p>
+        <form>
+            <div class="inline">
+                <input type="radio" id="html" name="joueur_prefere" value="Cristiano Ronaldo">
+                <label for="Cristiano Ronaldo">Cristiano Ronaldo</label>
+            </div>
+            <div class="inline">
+                <input type="radio" id="Messi" name="joueur_prefere" value="Messi">
+                <label for="Messi">Messi</label>
+            </div>
+            <div class="inline">
+                <input type="radio" id="Neymar" name="joueur_prefere" value="Neymar">
+                <label for="Neymar">Neymar</label>
+            </div>
+        </form>
+    </div>
+    <div class="form-group">
+        <p>Ton équipe préférée:</p>
+        <form>
+            <div class="inline">
+                <input type="checkbox" id="Real Madrid" name="équipe_prefere" value="Real Madrid">
+                <label for="Real Madrid">Real Madrid</label>
+            </div>
+            <div class="inline">
+                <input type="checkbox" id="Barça" name="équipe_prefere" value="Barça">
+                <label for="Barça">Barça</label>
+            </div>
+            <div class="inline">
+                <input type="checkbox" id="Liverpool" name="équipe_prefere" value="Liverpool">
+                <label for="Liverpool">Liverpool</label>
+            </div>
+        </form>
+    </div>
+    <div class="form-group">
+        <p>Zone de commentaire:</p>
+        <form>
+            <textarea name="message" rows="10" cols="40"></textarea>
+        </form>
+    </div>
+    <div class="form-group">
+        <p>Ton genre de film préféré:</p>
+        <form>
+            <input list="browsers" name="browser">
+            <datalist id="browsers">
+                <option value="Comedie">
+                <option value="Action">
+                <option value="Romance">
+                <option value="Fantastique">
+                <option value="Horreur">
+            </datalist>
+        </form>
+    </div>
+    <div class="form-group">
+        <p>Ta couleur préférée:</p>
+        <form>
+            <label for="cars">Choisis une couleur:</label>
+            <select id="cars" name="cars">
+                <option value="Bleu">Bleu</option>
+                <option value="Vert">Vert</option>
+                <option value="Rouge">Rouge</option>
+                <option value="Jaune">Jaune</option>
+            </select>
+        </form>
+    </div>
+    <div class="form-group">
+        <p>Entre dans tes fichiers:</p>
+        <form>
+            <input type="file" id="myfile" name="myfile">
+        </form>
+    </div>
+    <div class="form-group">
+        <form>
+            <input type="image" src="./istockphoto-1359248264-612x612.jpg" alt="Submit" width="48" height="48" onclick="alert('Super!!')">
+        </form>
+    </div>
+</div>
+</body>
+</html>
